@@ -1,0 +1,2 @@
+Always have to use -lm flag to link math.h so that sqrt() works.
+	Ex: gcc main.c pi.c -o main -lm

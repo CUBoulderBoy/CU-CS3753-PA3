@@ -14,10 +14,10 @@
 #include <stdio.h>
 #include <math.h>
 #include <errno.h>
+#include "pi.h"
 
 /* Local Defines */
-#define DEFAULT_ITERATIONS 1000000
-#define RADIUS (RAND_MAX / 2)
+
 
 /* Local Functions */
 inline double dist(double x0, double y0, double x1, double y1){
@@ -28,7 +28,7 @@ inline double zeroDist(double x, double y){
     return dist(0, 0, x, y);
 }
 
-int main(int argc, char* argv[]){
+void iterative_pi(){
 
     long i;
     long iterations;
@@ -38,19 +38,7 @@ int main(int argc, char* argv[]){
     double pCircle = 0.0;
     double piCalc = 0.0;
 
-    /* Process program arguments to select iterations */
-    /* Set default iterations if not supplied */
-    if(argc < 2){
-	iterations = DEFAULT_ITERATIONS;
-    }
-    /* Set iterations if supplied */
-    else{
-	iterations = atol(argv[1]);
-	if(iterations < 1){
-	    fprintf(stderr, "Bad iterations value\n");
-	    exit(EXIT_FAILURE);
-	}
-    }
+	iterations = ITERATIONS;   
 
     /* Calculate pi using statistical methode across all iterations*/
     for(i=0; i<iterations; i++){
@@ -69,5 +57,5 @@ int main(int argc, char* argv[]){
     /* Print result */
     fprintf(stdout, "pi = %f\n", piCalc);
 
-    return 0;
+    return;
 }
