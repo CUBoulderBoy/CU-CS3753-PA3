@@ -130,7 +130,7 @@ int main(int argc, char* argv[]){
     }
     fprintf(stdout, "New Scheduling Policy: %d\n", sched_getscheduler(0));
 
-    //Set the input file name base
+    //Set the input file name
     if(strnlen(DEFAULT_INPUTFILENAME, MAXFILENAMELENGTH) >= MAXFILENAMELENGTH){
             fprintf(stderr, "Default input filename too long\n");
             exit(EXIT_FAILURE);
@@ -144,9 +144,15 @@ int main(int argc, char* argv[]){
         }
     strncpy(outputFilenameBase, DEFAULT_OUTPUTFILENAMEBASE, MAXFILENAMELENGTH);
 
+    transfersize = DEFAULT_TRANSFERSIZE;
+
+    blocksize = DEFAULT_BLOCKSIZE;
+
     /* Fork processes as needed */
     for(; processes > 0; processes--){
-        pid = fork();
+        if (pid == 0){
+            pid = fork();
+        }
     }
     
     if (pid != 0){

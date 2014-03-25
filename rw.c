@@ -165,7 +165,9 @@ int main(int argc, char* argv[]){
 
     /* Fork as needed */
     for(; processes > 0; processes--){
-    	pid = fork();
+    	if (pid == 0){
+    		pid = fork();
+    	}
     }
 
     if (pid != 0){
