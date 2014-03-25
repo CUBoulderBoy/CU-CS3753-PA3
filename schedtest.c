@@ -60,8 +60,8 @@ int main(int argc, char* argv[]){
     fprintf(stdout, "Current Scheduling Policy: %d\n", sched_getscheduler(0));
     fprintf(stdout, "Setting Scheduling Policy to: %d\n", policy);
     if(sched_setscheduler(0, policy, &param)){
-	perror("Error setting scheduler policy");
-	exit(EXIT_FAILURE);
+    	perror("Error setting scheduler policy");
+    	exit(EXIT_FAILURE);
     }
     fprintf(stdout, "New Scheduling Policy: %d\n", sched_getscheduler(0));
 

@@ -42,9 +42,17 @@ pi-sched:
 rw:
  ./rw
  ./rw <#Bytes to Write to Output File>
- ./rw <#Bytes to Write to Output File> <Block Size>
- ./rw <#Bytes to Write to Output File> <Block Size> <Input Filename>
- ./rw <#Bytes to Write to Output File> <Block Size> <Input Filename> <Output Filename>
+ ./rw <#Processes> <#Bytes to Write to Output File>
+ ./rw <#Processes> <Scheduling Policy> <#Bytes to Write to Output File>
+ ./rw <#Processes> <Scheduling Policy> <#Bytes to Write to Output File> <Transfer Size>
+ ./rw <#Processes> <Scheduling Policy> <#Bytes to Write to Output File> <Transfer Size> <Block Size>
+ ./rw <#Processes> <Scheduling Policy> <#Bytes to Write to Output File> <Transfer Size> <Block Size> <Input Filename>
+ ./rw <#Processes> <Scheduling Policy> <#Bytes to Write to Output File> <Transfer Size> <Block Size> <Input Filename> <Output Filename>
+
+mix:
+ ./mix <#Iterations>
+ ./mix <#Iterations> <#Processes>
+ ./mix <#Iterations> <#Processes> <Scheduling Policy>
 
 testscript:
  ./testscript

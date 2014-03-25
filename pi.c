@@ -42,12 +42,14 @@ void iterative_pi(){
 
     /* Calculate pi using statistical methode across all iterations*/
     for(i=0; i<iterations; i++){
-	x = (random() % (RADIUS * 2)) - RADIUS;
-	y = (random() % (RADIUS * 2)) - RADIUS;
-	if(zeroDist(x,y) < RADIUS){
-	    inCircle++;
-	}
-	inSquare++;
+	   x = (random() % (RADIUS * 2)) - RADIUS;
+	   y = (random() % (RADIUS * 2)) - RADIUS;
+	   
+       if(zeroDist(x,y) < RADIUS){
+	       inCircle++;
+	   }
+       
+	   inSquare++;
     }
 
     /* Finish calculation */

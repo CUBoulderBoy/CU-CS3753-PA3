@@ -12,7 +12,7 @@ INPUTBLOCKS = $(shell echo $(INPUTFILESIZEBYTES)\/$(INPUTBLOCKSIZEBYTES) | bc)
 
 .PHONY: all clean
 
-all: pi pi-sched rw rr_quantum
+all: pi pi-sched rw rr_quantum mix
 
 pi: pi.o
 	$(CC) $(LFLAGS) $^ -o $@ -lm
@@ -37,6 +37,9 @@ rw.o: rw.c
 
 rwinput: Makefile
 	dd if=/dev/urandom of=./rwinput bs=$(INPUTBLOCKSIZEBYTES) count=$(INPUTBLOCKS)
+
+mix: mix.o rwinput
+	$(CC) $(LFLAGS) mix.o -o $@ -lm
 
 rr_quantum.o: rr_quantum.c
 	$(CC) $(CFLAGS) $<

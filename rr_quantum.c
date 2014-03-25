@@ -19,7 +19,6 @@
 #define NANO 1000000000.0
 
 int main(int argc, char* argv[]){
-
     (void) argc;
     (void) argv;
 
@@ -37,21 +36,25 @@ int main(int argc, char* argv[]){
     /* Set new scheduler policy */
     fprintf(stdout, "Current Scheduling Policy: %d\n", sched_getscheduler(0));
     fprintf(stdout, "Setting Scheduling Policy to: %d\n", policy);
+    
     if(sched_setscheduler(0, policy, &param)){
-	perror("Error setting scheduler policy");
-	exit(EXIT_FAILURE);
+	   perror("Error setting scheduler policy");
+	   exit(EXIT_FAILURE);
     }
+
     fprintf(stdout, "New Scheduling Policy: %d\n", sched_getscheduler(0));
 
     /* Find RR Quantum */
     if(sched_rr_get_interval(getpid(), &tp)){
-	perror("Error getting RR Quantum");
-	exit(EXIT_FAILURE);
+	   perror("Error getting RR Quantum");
+	   exit(EXIT_FAILURE);
     }
 
     fprintf(stdout, "tp.tv_sec  = %ld\n", tp.tv_sec);
     fprintf(stdout, "tp.tv_nsec = %ld\n", tp.tv_nsec);
+    
     qs = (tp.tv_nsec / NANO) + tp.tv_sec;
+    
     fprintf(stdout, "RR Quantum  = %f seconds\n", qs);
 
     return 0;
