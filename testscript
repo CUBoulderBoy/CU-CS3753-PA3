@@ -1,18 +1,18 @@
 #/!/bin/bash
 
 #File: testscript
-#Author: Andy Sayler
+#Author: Christopher Jordan
 #Project: CSCI 3753 Programming Assignment 3
-#Create Date: 2012/03/09
-#Modify Date: 2012/03/21
+#Create Date: 03/09/2012
+#Modify Date: 03/26/2014
 #Description:
 #	A simple bash script to run a signle copy of each test case
 #	and gather the relevent data.
 
 ITERATIONS=1000
-LIGHT=5
+LIGHT=1
 MEDIUM=50
-HEAVY=300
+HEAVY=100
 BYTESTOCOPY=102400
 BLOCKSIZE=1024
 TIMEFORMAT="wall=%e user=%U system=%S CPU=%P i-switched=%c v-switched=%w"

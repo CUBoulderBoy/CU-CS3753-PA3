@@ -1,9 +1,9 @@
 /*
- * File: pi-sched.c
- * Author: Andy Sayler
+ * File: mix.c
+ * Author: Christopeher Jordan
  * Project: CSCI 3753 Programming Assignment 3
- * Create Date: 2012/03/07
- * Modify Date: 2012/03/09
+ * Create Date: 03/24/2014
+ * Modify Date: 03/26/2014
  * Description:
  * 	This file contains a simple program for statistically
  *      calculating pi using a specific scheduling policy.

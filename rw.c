@@ -1,9 +1,9 @@
 /*
  * File: rw.c
- * Author: Andy Sayler
+ * Author: Christopher Jordan
  * Project: CSCI 3753 Programming Assignment 3
- * Create Date: 2012/03/19
- * Modify Date: 2012/03/20
+ * Create Date: 03/19/2012
+ * Modify Date: 03/25/2014
  * Description: A small i/o bound program to copy N bytes from an input
  *              file to an output file. May read the input file multiple
  *              times if N is larger than the size of the input file.
