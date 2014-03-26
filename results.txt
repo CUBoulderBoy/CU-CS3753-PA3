@@ -1,0 +1,172 @@
+Starting test runs...
+Calculating pi over 1000 iterations using SCHED_OTHER with 1 simultaneous processes...
+wall=0.00 user=0.00 system=0.00 CPU=0% i-switched=1 v-switched=1
+wall=0.00 user=0.00 system=0.00 CPU=0% i-switched=1 v-switched=1
+wall=0.00 user=0.00 system=0.00 CPU=0% i-switched=1 v-switched=1
+Calculating pi over 1000 iterations using SCHED_FIFO with 1 simultaneous processes...
+wall=0.00 user=0.00 system=0.00 CPU=57% i-switched=2 v-switched=3
+wall=0.00 user=0.00 system=0.00 CPU=57% i-switched=1 v-switched=3
+wall=0.00 user=0.00 system=0.00 CPU=57% i-switched=1 v-switched=3
+Calculating pi over 1000 iterations using SCHED_RR with 1 simultaneous processes...
+wall=0.00 user=0.00 system=0.00 CPU=50% i-switched=2 v-switched=3
+wall=0.00 user=0.00 system=0.00 CPU=57% i-switched=2 v-switched=3
+wall=0.00 user=0.00 system=0.00 CPU=57% i-switched=2 v-switched=3
+Calculating pi over 1000 iterations using SCHED_OTHER with 50 simultaneous processes...
+wall=0.00 user=0.00 system=0.00 CPU=0% i-switched=1 v-switched=1
+wall=0.00 user=0.00 system=0.00 CPU=?% i-switched=1 v-switched=1
+wall=0.00 user=0.00 system=0.00 CPU=?% i-switched=1 v-switched=1
+Calculating pi over 1000 iterations using SCHED_FIFO with 50 simultaneous processes...
+wall=0.00 user=0.00 system=0.00 CPU=50% i-switched=2 v-switched=3
+wall=0.00 user=0.00 system=0.00 CPU=50% i-switched=2 v-switched=3
+wall=0.00 user=0.00 system=0.00 CPU=57% i-switched=2 v-switched=3
+Calculating pi over 1000 iterations using SCHED_RR with 50 simultaneous processes...
+wall=0.00 user=0.00 system=0.00 CPU=57% i-switched=2 v-switched=3
+wall=0.00 user=0.00 system=0.00 CPU=57% i-switched=2 v-switched=3
+wall=0.00 user=0.00 system=0.00 CPU=57% i-switched=2 v-switched=3
+Calculating pi over 1000 iterations using SCHED_OTHER with 100 simultaneous processes...
+wall=0.00 user=0.00 system=0.00 CPU=?% i-switched=1 v-switched=1
+wall=0.00 user=0.00 system=0.00 CPU=0% i-switched=1 v-switched=1
+wall=0.00 user=0.00 system=0.00 CPU=0% i-switched=1 v-switched=1
+Calculating pi over 1000 iterations using SCHED_FIFO with 100 simultaneous processes...
+wall=0.00 user=0.00 system=0.00 CPU=44% i-switched=2 v-switched=3
+wall=0.00 user=0.00 system=0.00 CPU=57% i-switched=2 v-switched=3
+wall=0.00 user=0.00 system=0.00 CPU=57% i-switched=1 v-switched=3
+Calculating pi over 1000 iterations using SCHED_RR with 100 simultaneous processes...
+wall=0.00 user=0.00 system=0.00 CPU=66% i-switched=2 v-switched=3
+wall=0.00 user=0.00 system=0.00 CPU=50% i-switched=2 v-switched=3
+wall=0.00 user=0.00 system=0.00 CPU=50% i-switched=1 v-switched=3
+Copying 102400 bytes in blocks of 1024 from rwinput to rwoutput
+using SCHED_OTHER with 1 simultaneous process...
+wall=0.19 user=0.00 system=0.02 CPU=12% i-switched=1 v-switched=201
+rm -f rwoutput*
+wall=0.18 user=0.00 system=0.02 CPU=12% i-switched=1 v-switched=201
+rm -f rwoutput*
+wall=0.19 user=0.00 system=0.02 CPU=12% i-switched=1 v-switched=201
+rm -f rwoutput*
+Copying 102400 bytes in blocks of 1024 from rwinput to rwoutput
+using SCHED_OTHER with 1 simultaneous process...
+wall=0.20 user=0.00 system=0.03 CPU=15% i-switched=2 v-switched=202
+rm -f rwoutput*
+wall=0.20 user=0.00 system=0.03 CPU=15% i-switched=2 v-switched=203
+rm -f rwoutput*
+wall=0.19 user=0.00 system=0.03 CPU=16% i-switched=2 v-switched=203
+rm -f rwoutput*
+Copying 102400 bytes in blocks of 1024 from rwinput to rwoutput
+using SCHED_OTHER with 1 simultaneous process...
+wall=0.21 user=0.00 system=0.03 CPU=15% i-switched=2 v-switched=204
+rm -f rwoutput*
+wall=0.19 user=0.00 system=0.03 CPU=16% i-switched=2 v-switched=203
+rm -f rwoutput*
+wall=0.20 user=0.00 system=0.03 CPU=15% i-switched=2 v-switched=203
+rm -f rwoutput*
+Copying 102400 bytes in blocks of 1024 from rwinput to rwoutput
+using SCHED_OTHER with 50 simultaneous process...
+wall=0.18 user=0.00 system=0.02 CPU=12% i-switched=1 v-switched=201
+rm -f rwoutput*
+wall=0.18 user=0.00 system=0.02 CPU=12% i-switched=1 v-switched=201
+rm -f rwoutput*
+wall=0.22 user=0.00 system=0.02 CPU=10% i-switched=1 v-switched=201
+rm -f rwoutput*
+Copying 102400 bytes in blocks of 1024 from rwinput to rwoutput
+using SCHED_OTHER with 50 simultaneous process...
+wall=0.19 user=0.00 system=0.03 CPU=16% i-switched=2 v-switched=203
+rm -f rwoutput*
+wall=0.53 user=0.00 system=0.03 CPU=6% i-switched=2 v-switched=203
+rm -f rwoutput*
+wall=0.21 user=0.00 system=0.03 CPU=16% i-switched=2 v-switched=203
+rm -f rwoutput*
+Copying 102400 bytes in blocks of 1024 from rwinput to rwoutput
+using SCHED_OTHER with 50 simultaneous process...
+wall=0.21 user=0.00 system=0.03 CPU=15% i-switched=2 v-switched=203
+rm -f rwoutput*
+wall=0.20 user=0.00 system=0.03 CPU=17% i-switched=2 v-switched=203
+rm -f rwoutput*
+wall=0.20 user=0.00 system=0.03 CPU=15% i-switched=2 v-switched=203
+rm -f rwoutput*
+Copying 102400 bytes in blocks of 1024 from rwinput to rwoutput
+using SCHED_OTHER with 100 simultaneous process...
+wall=0.19 user=0.00 system=0.02 CPU=12% i-switched=1 v-switched=201
+rm -f rwoutput*
+wall=0.20 user=0.00 system=0.02 CPU=12% i-switched=1 v-switched=201
+rm -f rwoutput*
+wall=0.23 user=0.00 system=0.01 CPU=10% i-switched=1 v-switched=201
+rm -f rwoutput*
+Copying 102400 bytes in blocks of 1024 from rwinput to rwoutput
+using SCHED_OTHER with 100 simultaneous process...
+wall=0.19 user=0.00 system=0.02 CPU=10% i-switched=2 v-switched=197
+rm -f rwoutput*
+wall=0.20 user=0.00 system=0.03 CPU=15% i-switched=2 v-switched=203
+rm -f rwoutput*
+wall=0.19 user=0.00 system=0.01 CPU=8% i-switched=3 v-switched=200
+rm -f rwoutput*
+Copying 102400 bytes in blocks of 1024 from rwinput to rwoutput
+using SCHED_OTHER with 100 simultaneous process...
+wall=0.20 user=0.00 system=0.03 CPU=15% i-switched=2 v-switched=203
+rm -f rwoutput*
+wall=0.19 user=0.01 system=0.00 CPU=8% i-switched=2 v-switched=202
+rm -f rwoutput*
+wall=0.20 user=0.00 system=0.03 CPU=15% i-switched=2 v-switched=203
+rm -f rwoutput*
+running mix using SCHED_OTHER with 1 simultaneous processes...
+wall=1.98 user=0.03 system=0.21 CPU=12% i-switched=1 v-switched=2001
+rm -f rwoutput*
+wall=2.00 user=0.04 system=0.20 CPU=12% i-switched=2 v-switched=2001
+rm -f rwoutput*
+wall=1.95 user=0.05 system=0.19 CPU=12% i-switched=2 v-switched=2001
+rm -f rwoutput*
+running mix using SCHED_FIFO with 1 simultaneous processes...
+wall=16.78 user=0.03 system=0.28 CPU=1% i-switched=2 v-switched=2015
+rm -f rwoutput*
+wall=2.15 user=0.00 system=0.14 CPU=7% i-switched=2 v-switched=2004
+rm -f rwoutput*
+wall=2.43 user=0.04 system=0.26 CPU=12% i-switched=2 v-switched=2023
+rm -f rwoutput*
+running mix using SCHED_RR with 1 simultaneous processes...
+wall=2.05 user=0.03 system=0.28 CPU=15% i-switched=2 v-switched=2015
+rm -f rwoutput*
+wall=7.22 user=0.04 system=0.25 CPU=4% i-switched=2 v-switched=2003
+rm -f rwoutput*
+wall=1.94 user=0.02 system=0.14 CPU=8% i-switched=2 v-switched=1990
+rm -f rwoutput*
+running mix using SCHED_OTHER with 50 simultaneous processes...
+wall=55.75 user=0.00 system=0.21 CPU=0% i-switched=26 v-switched=3169
+rm -f rwoutput*
+wall=36.34 user=0.01 system=0.19 CPU=0% i-switched=21 v-switched=3174
+rm -f rwoutput*
+wall=37.38 user=0.02 system=0.16 CPU=0% i-switched=18 v-switched=3224
+rm -f rwoutput*
+running mix using SCHED_FIFO with 50 simultaneous processes...
+wall=68.21 user=0.00 system=0.20 CPU=0% i-switched=2 v-switched=3001
+rm -f rwoutput*
+wall=58.03 user=0.00 system=0.18 CPU=0% i-switched=3 v-switched=3010
+rm -f rwoutput*
+wall=45.78 user=0.00 system=0.11 CPU=0% i-switched=3 v-switched=2458
+rm -f rwoutput*
+running mix using SCHED_RR with 50 simultaneous processes...
+wall=31.03 user=0.00 system=0.18 CPU=0% i-switched=4 v-switched=2994
+rm -f rwoutput*
+wall=48.65 user=0.02 system=0.11 CPU=0% i-switched=3 v-switched=2973
+rm -f rwoutput*
+wall=39.68 user=0.01 system=0.17 CPU=0% i-switched=2 v-switched=2988
+rm -f rwoutput*
+running mix using SCHED_OTHER with 100 simultaneous processes...
+wall=79.68 user=0.01 system=0.16 CPU=0% i-switched=32 v-switched=3146
+rm -f rwoutput*
+wall=74.32 user=0.00 system=0.18 CPU=0% i-switched=16 v-switched=3212
+rm -f rwoutput*
+wall=76.44 user=0.00 system=0.17 CPU=0% i-switched=29 v-switched=3229
+rm -f rwoutput*
+running mix using SCHED_FIFO with 100 simultaneous processes...
+wall=46.17 user=0.00 system=0.13 CPU=0% i-switched=5 v-switched=3099
+rm -f rwoutput*
+wall=98.11 user=0.00 system=0.22 CPU=0% i-switched=2 v-switched=2796
+rm -f rwoutput*
+wall=78.32 user=0.00 system=0.20 CPU=0% i-switched=2 v-switched=3006
+rm -f rwoutput*
+running mix using SCHED_RR with 100 simultaneous processes...
+wall=122.64 user=0.00 system=0.24 CPU=0% i-switched=12 v-switched=2914
+rm -f rwoutput*
+wall=106.13 user=0.00 system=0.24 CPU=0% i-switched=3 v-switched=3008
+rm -f rwoutput*
+wall=78.61 user=0.00 system=0.14 CPU=0% i-switched=2 v-switched=3026
+rm -f rwoutput*
