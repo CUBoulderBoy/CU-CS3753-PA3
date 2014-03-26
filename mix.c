@@ -45,6 +45,7 @@ int main(int argc, char* argv[]){
     long iterations;
     
     struct sched_param param;
+    int j;
     int policy;
     int processes;
     
@@ -207,15 +208,17 @@ int main(int argc, char* argv[]){
             inputFilename, outputFilename);
 
         /* Calculate pi using statistical methode across all iterations */    
-        for(i = 0; i < iterations; i++){
-            x = (random() % (RADIUS * 2)) - RADIUS;
-            y = (random() % (RADIUS * 2)) - RADIUS;
-            
-            if(zeroDist(x,y) < RADIUS){
-                inCircle++;
-            }
+        for(i = 0; i < iterations; ){
+            for (j = 0; j < 100000; j++){
+                x = (random() % (RADIUS * 2)) - RADIUS;
+                y = (random() % (RADIUS * 2)) - RADIUS;
+                
+                if(zeroDist(x,y) < RADIUS){
+                    inCircle++;
+                }
 
-            inSquare++;
+                inSquare++;
+            }
 
             /* Read transfersize bytes from input file*/
             bytesRead = read(inputFD, transferBuffer, buffersize);
@@ -249,6 +252,8 @@ int main(int argc, char* argv[]){
 
                 inputFileResets++;
             }
+
+            i = i + 100000;
         }
 
         /* Finish calculation */

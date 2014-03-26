@@ -10,7 +10,7 @@
 #	and gather the relevent data.
 
 PIITERATIONS=1000000
-ITERATIONS=100
+ITERATIONS=1000000
 LIGHT=5
 MEDIUM=70
 HEAVY=300
@@ -28,206 +28,287 @@ echo Starting test runs...
 #LIGHT CPU TESTING ------------------------------------------------------------------------------------
 echo Calculating pi over $ITERATIONS iterations using SCHED_OTHER with $LIGHT simultaneous processes...
 /usr/bin/time -f "$TIMEFORMAT" ./pi-sched $PIITERATIONS SCHED_OTHER $LIGHT > /dev/null
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" ./pi-sched $PIITERATIONS SCHED_OTHER $LIGHT > /dev/null
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" ./pi-sched $ITERATIONS SCHED_OTHER $LIGHT > /dev/null
+sleep 5
 
 echo Calculating pi over $ITERATIONS iterations using SCHED_FIFO with $LIGHT simultaneous processes...
 /usr/bin/time -f "$TIMEFORMAT" sudo ./pi-sched $PIITERATIONS SCHED_FIFO $LIGHT > /dev/null
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./pi-sched $PIITERATIONS SCHED_FIFO $LIGHT > /dev/null
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./pi-sched $PIITERATIONS SCHED_FIFO $LIGHT > /dev/null
+sleep 5
 
 echo Calculating pi over $ITERATIONS iterations using SCHED_RR with $LIGHT simultaneous processes...
 /usr/bin/time -f "$TIMEFORMAT" sudo ./pi-sched $PIITERATIONS SCHED_RR $LIGHT > /dev/null
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./pi-sched $PIITERATIONS SCHED_RR $LIGHT > /dev/null
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./pi-sched $PIITERATIONS SCHED_RR $LIGHT > /dev/null
+sleep 5
 
 #MEDIUM CPU TESTING -----------------------------------------------------------------------------------
 echo Calculating pi over $ITERATIONS iterations using SCHED_OTHER with $MEDIUM simultaneous processes...
 /usr/bin/time -f "$TIMEFORMAT" ./pi-sched $PIITERATIONS SCHED_OTHER $MEDIUM > /dev/null
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" ./pi-sched $PIITERATIONS SCHED_OTHER $MEDIUM > /dev/null
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" ./pi-sched $PIITERATIONS SCHED_OTHER $MEDIUM > /dev/null
+sleep 5
 
 echo Calculating pi over $ITERATIONS iterations using SCHED_FIFO with $MEDIUM simultaneous processes...
 /usr/bin/time -f "$TIMEFORMAT" sudo ./pi-sched $PIITERATIONS SCHED_FIFO $MEDIUM > /dev/null
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./pi-sched $PIITERATIONS SCHED_FIFO $MEDIUM > /dev/null
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./pi-sched $PIITERATIONS SCHED_FIFO $MEDIUM > /dev/null
+sleep 5
 
 echo Calculating pi over $ITERATIONS iterations using SCHED_RR with $MEDIUM simultaneous processes...
 /usr/bin/time -f "$TIMEFORMAT" sudo ./pi-sched $PIITERATIONS SCHED_RR $MEDIUM > /dev/null
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./pi-sched $PIITERATIONS SCHED_RR $MEDIUM > /dev/null
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./pi-sched $PIITERATIONS SCHED_RR $MEDIUM > /dev/null
+sleep 5
 
 #HEAVY CPU TESTING ------------------------------------------------------------------------------------
 echo Calculating pi over $ITERATIONS iterations using SCHED_OTHER with $HEAVY simultaneous processes...
 /usr/bin/time -f "$TIMEFORMAT" ./pi-sched $PIITERATIONS SCHED_OTHER $HEAVY > /dev/null
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" ./pi-sched $PIITERATIONS SCHED_OTHER $HEAVY > /dev/null
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" ./pi-sched $PIITERATIONS SCHED_OTHER $HEAVY > /dev/null
+sleep 5
 
 echo Calculating pi over $ITERATIONS iterations using SCHED_FIFO with $HEAVY simultaneous processes...
 /usr/bin/time -f "$TIMEFORMAT" sudo ./pi-sched $PIITERATIONS SCHED_FIFO $HEAVY > /dev/null
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./pi-sched $PIITERATIONS SCHED_FIFO $HEAVY > /dev/null
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./pi-sched $PIITERATIONS SCHED_FIFO $HEAVY > /dev/null
+sleep 5
 
 echo Calculating pi over $ITERATIONS iterations using SCHED_RR with $HEAVY simultaneous processes...
 /usr/bin/time -f "$TIMEFORMAT" sudo ./pi-sched $PIITERATIONS SCHED_RR $HEAVY > /dev/null
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./pi-sched $PIITERATIONS SCHED_RR $HEAVY > /dev/null
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./pi-sched $PIITERATIONS SCHED_RR $HEAVY > /dev/null
+sleep 5
 
 #LIGHT IO TESTING -------------------------------------------------------------------------------------
 echo Copying $BYTESTOCOPY bytes in blocks of $BLOCKSIZE from rwinput to rwoutput
 echo running IO testing using SCHED_OTHER with $LIGHT simultaneous process...
 /usr/bin/time -f "$TIMEFORMAT" ./rw $LIGHT SCHED_OTHER $BYTESTOCOPY $BLOCKSIZE > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" ./rw $LIGHT SCHED_OTHER $BYTESTOCOPY $BLOCKSIZE > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" ./rw $LIGHT SCHED_OTHER $BYTESTOCOPY $BLOCKSIZE > /dev/null
 make testclean
+sleep 5
 
 echo Copying $BYTESTOCOPY bytes in blocks of $BLOCKSIZE from rwinput to rwoutput
 echo running IO testing using SCHED_OTHER with $LIGHT simultaneous process...
 /usr/bin/time -f "$TIMEFORMAT" sudo ./rw $LIGHT SCHED_FIFO $BYTESTOCOPY $BLOCKSIZE > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./rw $LIGHT SCHED_FIFO $BYTESTOCOPY $BLOCKSIZE > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./rw $LIGHT SCHED_FIFO $BYTESTOCOPY $BLOCKSIZE > /dev/null
 make testclean
+sleep 5
 
 echo Copying $BYTESTOCOPY bytes in blocks of $BLOCKSIZE from rwinput to rwoutput
 echo running IO testing using SCHED_OTHER with $LIGHT simultaneous process...
 /usr/bin/time -f "$TIMEFORMAT" sudo ./rw $LIGHT SCHED_RR $BYTESTOCOPY $BLOCKSIZE > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./rw $LIGHT SCHED_RR $BYTESTOCOPY $BLOCKSIZE > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./rw $LIGHT SCHED_RR $BYTESTOCOPY $BLOCKSIZE > /dev/null
 make testclean
+sleep 5
 
 #MEDIUM IO TESTING ------------------------------------------------------------------------------------
 echo Copying $BYTESTOCOPY bytes in blocks of $BLOCKSIZE from rwinput to rwoutput
 echo running IO testing using SCHED_OTHER with $MEDIUM simultaneous process...
 /usr/bin/time -f "$TIMEFORMAT" ./rw $MEDIUM SCHED_OTHER $BYTESTOCOPY $BLOCKSIZE > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" ./rw $MEDIUM SCHED_OTHER $BYTESTOCOPY $BLOCKSIZE > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" ./rw $MEDIUM SCHED_OTHER $BYTESTOCOPY $BLOCKSIZE > /dev/null
 make testclean
+sleep 5
 
 echo Copying $BYTESTOCOPY bytes in blocks of $BLOCKSIZE from rwinput to rwoutput
 echo running IO testing using SCHED_OTHER with $MEDIUM simultaneous process...
 /usr/bin/time -f "$TIMEFORMAT" sudo ./rw $MEDIUM SCHED_FIFO $BYTESTOCOPY $BLOCKSIZE > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./rw $MEDIUM SCHED_FIFO $BYTESTOCOPY $BLOCKSIZE > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./rw $MEDIUM SCHED_FIFO $BYTESTOCOPY $BLOCKSIZE > /dev/null
 make testclean
+sleep 5
 
 echo Copying $BYTESTOCOPY bytes in blocks of $BLOCKSIZE from rwinput to rwoutput
 echo running IO testing using SCHED_OTHER with $MEDIUM simultaneous process...
 /usr/bin/time -f "$TIMEFORMAT" sudo ./rw $MEDIUM SCHED_RR $BYTESTOCOPY $BLOCKSIZE > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./rw $MEDIUM SCHED_RR $BYTESTOCOPY $BLOCKSIZE > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./rw $MEDIUM SCHED_RR $BYTESTOCOPY $BLOCKSIZE > /dev/null
 make testclean
+sleep 5
 
 #HEAVY IO TESTING -------------------------------------------------------------------------------------
 echo Copying $BYTESTOCOPY bytes in blocks of $BLOCKSIZE from rwinput to rwoutput
 echo running IO testing using SCHED_OTHER with $HEAVY simultaneous process...
 /usr/bin/time -f "$TIMEFORMAT" ./rw $HEAVY SCHED_OTHER $BYTESTOCOPY $BLOCKSIZE > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" ./rw $HEAVY SCHED_OTHER $BYTESTOCOPY $BLOCKSIZE > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" ./rw $HEAVY SCHED_OTHER $BYTESTOCOPY $BLOCKSIZE > /dev/null
 make testclean
+sleep 5
 
 echo Copying $BYTESTOCOPY bytes in blocks of $BLOCKSIZE from rwinput to rwoutput
 echo running IO testing using SCHED_OTHER with $HEAVY simultaneous process...
 /usr/bin/time -f "$TIMEFORMAT" sudo ./rw $HEAVY SCHED_FIFO $BYTESTOCOPY $BLOCKSIZE > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./rw $HEAVY SCHED_FIFO $BYTESTOCOPY $BLOCKSIZE > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./rw $HEAVY SCHED_FIFO $BYTESTOCOPY $BLOCKSIZE > /dev/null
 make testclean
+sleep 5
 
 echo Copying $BYTESTOCOPY bytes in blocks of $BLOCKSIZE from rwinput to rwoutput
 echo running IO testing using SCHED_OTHER with $HEAVY simultaneous process...
 /usr/bin/time -f "$TIMEFORMAT" sudo ./rw $HEAVY SCHED_RR $BYTESTOCOPY $BLOCKSIZE > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./rw $HEAVY SCHED_RR $BYTESTOCOPY $BLOCKSIZE > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./rw $HEAVY SCHED_RR $BYTESTOCOPY $BLOCKSIZE > /dev/null
 make testclean
+sleep 5
 
 #MIX LIGHT TESTING ------------------------------------------------------------------------------------
 echo running mix using SCHED_OTHER with $LIGHT simultaneous processes...
 /usr/bin/time -f "$TIMEFORMAT" ./mix $ITERATIONS SCHED_OTHER $LIGHT > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" ./mix $ITERATIONS SCHED_OTHER $LIGHT > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" ./mix $ITERATIONS SCHED_OTHER $LIGHT > /dev/null
 make testclean
+sleep 5
 
 echo running mix using SCHED_FIFO with $LIGHT simultaneous processes...
 /usr/bin/time -f "$TIMEFORMAT" sudo ./mix $ITERATIONS SCHED_FIFO $LIGHT > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./mix $ITERATIONS SCHED_FIFO $LIGHT > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./mix $ITERATIONS SCHED_FIFO $LIGHT > /dev/null
 make testclean
+sleep 5
 
 echo running mix using SCHED_RR with $LIGHT simultaneous processes...
 /usr/bin/time -f "$TIMEFORMAT" sudo ./mix $ITERATIONS SCHED_RR $LIGHT > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./mix $ITERATIONS SCHED_RR $LIGHT > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./mix $ITERATIONS SCHED_RR $LIGHT > /dev/null
 make testclean
+sleep 5
 
 #MIX MEDIUM TESTING -----------------------------------------------------------------------------------
 echo running mix using SCHED_OTHER with $MEDIUM simultaneous processes...
 /usr/bin/time -f "$TIMEFORMAT" ./mix $ITERATIONS SCHED_OTHER $MEDIUM > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" ./mix $ITERATIONS SCHED_OTHER $MEDIUM > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" ./mix $ITERATIONS SCHED_OTHER $MEDIUM > /dev/null
 make testclean
+sleep 5
 
 echo running mix using SCHED_FIFO with $MEDIUM simultaneous processes...
 /usr/bin/time -f "$TIMEFORMAT" sudo ./mix $ITERATIONS SCHED_FIFO $MEDIUM > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./mix $ITERATIONS SCHED_FIFO $MEDIUM > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./mix $ITERATIONS SCHED_FIFO $MEDIUM > /dev/null
 make testclean
+sleep 5
 
 echo running mix using SCHED_RR with $MEDIUM simultaneous processes...
 /usr/bin/time -f "$TIMEFORMAT" sudo ./mix $ITERATIONS SCHED_RR $MEDIUM > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./mix $ITERATIONS SCHED_RR $MEDIUM > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./mix $ITERATIONS SCHED_RR $MEDIUM > /dev/null
 make testclean
+sleep 5
 
 #MIX HEAVY TESTING ------------------------------------------------------------------------------------
 echo running mix using SCHED_OTHER with $HEAVY simultaneous processes...
 /usr/bin/time -f "$TIMEFORMAT" ./mix $ITERATIONS SCHED_OTHER $HEAVY > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" ./mix $ITERATIONS SCHED_OTHER $HEAVY > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" ./mix $ITERATIONS SCHED_OTHER $HEAVY > /dev/null
 make testclean
+sleep 5
 
 echo running mix using SCHED_FIFO with $HEAVY simultaneous processes...
 /usr/bin/time -f "$TIMEFORMAT" sudo ./mix $ITERATIONS SCHED_FIFO $HEAVY > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./mix $ITERATIONS SCHED_FIFO $HEAVY > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./mix $ITERATIONS SCHED_FIFO $HEAVY > /dev/null
 make testclean
+sleep 5
 
 echo running mix using SCHED_RR with $HEAVY simultaneous processes...
 /usr/bin/time -f "$TIMEFORMAT" sudo ./mix $ITERATIONS SCHED_RR $HEAVY > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./mix $ITERATIONS SCHED_RR $HEAVY > /dev/null
 make testclean
+sleep 5
 /usr/bin/time -f "$TIMEFORMAT" sudo ./mix $ITERATIONS SCHED_RR $HEAVY > /dev/null
 make testclean
+sleep 5
