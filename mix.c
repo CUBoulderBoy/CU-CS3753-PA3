@@ -141,12 +141,21 @@ int main(int argc, char* argv[]){
         }
     strncpy(inputFilename, DEFAULT_INPUTFILENAME, MAXFILENAMELENGTH);
 
-    //Set the output file name base
-    if(strnlen(DEFAULT_OUTPUTFILENAMEBASE, MAXFILENAMELENGTH) >= MAXFILENAMELENGTH){
+     /* Set supplied output filename base or default if not supplied */
+    if(argc < 5){
+        if(strnlen(DEFAULT_OUTPUTFILENAMEBASE, MAXFILENAMELENGTH) >= MAXFILENAMELENGTH){
             fprintf(stderr, "Default output filename base too long\n");
             exit(EXIT_FAILURE);
         }
-    strncpy(outputFilenameBase, DEFAULT_OUTPUTFILENAMEBASE, MAXFILENAMELENGTH);
+        strncpy(outputFilenameBase, DEFAULT_OUTPUTFILENAMEBASE, MAXFILENAMELENGTH);
+    }
+    else{
+        if(strnlen(argv[4], MAXFILENAMELENGTH) >= MAXFILENAMELENGTH){
+            fprintf(stderr, "Output filename base is too long\n");
+            exit(EXIT_FAILURE);
+        }
+        strncpy(outputFilenameBase, argv[6], MAXFILENAMELENGTH);
+    }
 
     transfersize = DEFAULT_TRANSFERSIZE;
 

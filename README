@@ -51,6 +51,7 @@ mix:
  ./mix <#Iterations>
  ./mix <#Iterations> <Scheduling Policy>
  ./mix <#Iterations> <Scheduling Policy> <#Processes>
+ ./mix <#Iterations> <Scheduling Policy> <#Processes> <Output Filename>
 
 testscript:
  ./testscript
