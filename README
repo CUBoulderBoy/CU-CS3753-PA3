@@ -30,14 +30,11 @@ Build:
 Clean:
  make clean
 
-pi:
- ./pi
- ./pi <Number of Iterations>
-
 pi-sched:
  ./pi-sched
  ./pi-sched <Number of Iterations>
  ./pi-sched <Number of Iterations> <Scheduling Policy>
+ ./pi-sched <Number of Iterations> <Scheduling Policy> <#Processes>
 
 rw:
  ./rw
