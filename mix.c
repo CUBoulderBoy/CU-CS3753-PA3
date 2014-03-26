@@ -81,25 +81,19 @@ int main(int argc, char* argv[]){
     /* Set default iterations if not supplied */
     if(argc < 2){
         iterations = DEFAULT_ITERATIONS;
+        fprintf(stdout, "Setting Number of Iterations to: %d\n", iterations);
     }
     else{
 	    iterations = atol(argv[1]);
+        fprintf(stdout, "Setting Number of Iterations to: %d\n", iterations);
         if(iterations < 1){
             fprintf(stderr, "Bad iterations value\n");
             exit(EXIT_FAILURE);
         }
     }
 
-    /* Set number of processes */
-    if(argc < 3){
-        processes = 1;
-    }
-    else{
-        processes = atol(argv[2]);
-    }
-
     /* Set default policy if not supplied */
-    if(argc < 4){
+    if(argc < 3){
 	   policy = SCHED_OTHER;
     }
     else{
@@ -129,6 +123,16 @@ int main(int argc, char* argv[]){
     	exit(EXIT_FAILURE);
     }
     fprintf(stdout, "New Scheduling Policy: %d\n", sched_getscheduler(0));
+
+    /* Set number of processes */
+    if(argc < 4){
+        processes = 1;
+        fprintf(stdout, "Setting Number of Processes to: %d\n", processes);
+    }
+    else{
+        processes = atol(argv[3]);
+        fprintf(stdout, "Setting Number of Processes to: %d\n", processes);
+    }
 
     //Set the input file name
     if(strnlen(DEFAULT_INPUTFILENAME, MAXFILENAMELENGTH) >= MAXFILENAMELENGTH){
@@ -204,41 +208,38 @@ int main(int argc, char* argv[]){
 
             inSquare++;
 
-            /* Read from input file and write to output file*/
-            do{
-                /* Read transfersize bytes from input file*/
-                bytesRead = read(inputFD, transferBuffer, buffersize);
-                if(bytesRead < 0){
-                    perror("Error reading input file");
+            /* Read transfersize bytes from input file*/
+            bytesRead = read(inputFD, transferBuffer, buffersize);
+            if(bytesRead < 0){
+                perror("Error reading input file");
+                exit(EXIT_FAILURE);
+            }
+            else{
+                totalBytesRead += bytesRead;
+                totalReads++;
+            }
+            
+            /* If all bytes were read, write to output file*/
+            if(bytesRead == blocksize){
+                bytesWritten = write(outputFD, transferBuffer, bytesRead);
+                if(bytesWritten < 0){
+                    perror("Error writing output file");
                     exit(EXIT_FAILURE);
                 }
                 else{
-                    totalBytesRead += bytesRead;
-                    totalReads++;
+                    totalBytesWritten += bytesWritten;
+                    totalWrites++;
                 }
-                
-                /* If all bytes were read, write to output file*/
-                if(bytesRead == blocksize){
-                    bytesWritten = write(outputFD, transferBuffer, bytesRead);
-                    if(bytesWritten < 0){
-                        perror("Error writing output file");
-                        exit(EXIT_FAILURE);
-                    }
-                    else{
-                        totalBytesWritten += bytesWritten;
-                        totalWrites++;
-                    }
+            }
+            /* Otherwise assume we have reached the end of the input file and reset */
+            else{
+                if(lseek(inputFD, 0, SEEK_SET)){
+                    perror("Error resetting to beginning of file");
+                    exit(EXIT_FAILURE);
                 }
-                /* Otherwise assume we have reached the end of the input file and reset */
-                else{
-                    if(lseek(inputFD, 0, SEEK_SET)){
-                        perror("Error resetting to beginning of file");
-                        exit(EXIT_FAILURE);
-                    }
 
-                    inputFileResets++;
-                }
-            }while(totalBytesWritten < transfersize);
+                inputFileResets++;
+            }
         }
 
         /* Finish calculation */

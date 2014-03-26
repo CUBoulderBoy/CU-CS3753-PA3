@@ -48,8 +48,8 @@ rw:
 
 mix:
  ./mix <#Iterations>
- ./mix <#Iterations> <#Processes>
- ./mix <#Iterations> <#Processes> <Scheduling Policy>
+ ./mix <#Iterations> <Scheduling Policy>
+ ./mix <#Iterations> <Scheduling Policy> <#Processes>
 
 testscript:
  ./testscript
